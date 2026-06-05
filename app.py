@@ -30,14 +30,16 @@ if uploaded_file:
     ).columns
 
     x_col = st.selectbox(
-        "Select Feature 1",
-        numerical_cols
-    )
+    "Select Feature 1",
+    numerical_cols,
+    index=0
+)
 
     y_col = st.selectbox(
-        "Select Feature 2",
-        numerical_cols
-    )
+    "Select Feature 2",
+    numerical_cols,
+    index=1 if len(numerical_cols) > 1 else 0
+)
 
     n_clusters = st.slider(
         "Number of Clusters",
